@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "brand": "Apple",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    },
+    {
+      "id": 2,
+      "brand": "Samsung",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    },
+    {
+      "id": 3,
+      "brand": "Google",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    },
+    {
+      "id": 4,
+      "brand": "Microsoft",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    },
+    {
+      "id": 5,
+      "brand": "Xiaomi",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    },
+    {
+      "id": 6,
+      "brand": "Nokia",
+      "imgUrl": "https://i.ibb.co/v1vHkBy/Rectangle-10.png"
+    }
+  ]
+  
