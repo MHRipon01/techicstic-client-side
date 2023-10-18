@@ -3,6 +3,9 @@ import Banner from "../components/Banner";
 import { Link, useLoaderData } from "react-router-dom";
 import BrandDetails from "./BrandDetails";
 import BrandCard from "../components/BrandCard";
+import Footer from "../components/Footer";
+import RecentSoldItems from "../components/RecentSoldItems";
+import NewArrivals from "../components/NewArrivals";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -36,68 +39,14 @@ const Home = () => {
       <Banner></Banner>
       Home check
       {products.length}
-
-      {
-        data.map(brand => (
+      <RecentSoldItems></RecentSoldItems>
+      <div className="w-[95%] ml-2.5 lg:ml-10  h-full gap-x-3   grid md:grid-cols-2 lg:grid-cols-3">
+        {data.map((brand) => (
           <BrandCard key={brand.id} data={data} brand={brand}></BrandCard>
-        ))
-      }
-
-
-      
-      <Link to={{ pathname: `/details/${data.brand}` }}>
-        <button className="p-4 m-3 bg-gray-800 text-white">
-          Filter Data by Apple
-        </button>
-      </Link>
-      <br />
-      <Link to={{ pathname: `/details/brand` }}>
-        <button
-          className="p-4 m-3 bg-gray-800 text-white"
-          onClick={() => findData("Samsung")}
-        >
-          Filter Data by Samsung
-        </button>{" "}
-      </Link>
-      <br />
-      <button
-        className="p-4 m-3 bg-gray-800 text-white"
-        onClick={() => findData("Google")}
-      >
-        Filter Data by Google
-      </button>{" "}
-      <br />
-      <button
-        className="p-4 m-3 bg-gray-800 text-white"
-        onClick={() => findData("Microsoft")}
-      >
-        Filter Data by Microsoft
-      </button>{" "}
-      <br />
-      <button
-        className="p-4 m-3 bg-gray-800 text-white"
-        onClick={() => findData("Xiaomi")}
-      >
-        Filter Data by Xiaomi{" "}
-      </button>{" "}
-      <br />
-      <Link to={{ pathname: "/details" }}>
-        <button
-          className="p-4 m-3 bg-gray-800 text-white"
-          onClick={() => findData("Nokia")}
-        >
-          Filter Data by Nokia
-        </button>
-      </Link>
-      <br />
-      {filteredData.map((item) => (
-        <BrandDetails
-          key={item._id}
-          products={products}
-          setFilteredData={setFilteredData}
-          filteredData={filteredData}
-        ></BrandDetails>
-      ))}
+        ))}
+      </div>
+      <NewArrivals></NewArrivals>
+      <Footer></Footer>
     </div>
   );
 };
