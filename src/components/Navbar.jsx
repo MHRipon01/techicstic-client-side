@@ -1,9 +1,24 @@
 
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { AuthContext } from '../firebase/AuthProvider';
 
 const Navbar = () => {
-    
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleSignOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
+
+
   const navLinks = (
     <>
       <NavLink
@@ -43,7 +58,7 @@ const Navbar = () => {
       >
         My Cart
       </NavLink>
-      <NavLink
+      {/* <NavLink
         className="text-2xl font-Cormorant font-medium rounded-xl p-3"
         to="/login"
         style={({ isActive }) => {
@@ -54,7 +69,7 @@ const Navbar = () => {
         }}
       >
        Login 
-      </NavLink>
+      </NavLink> */}
     </>
   );
 
@@ -99,10 +114,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end md:flex justify-center items-center text-center ">
           
-          {/* {user ? (
+          {user ? (
             <>
              {
-              user.photoURL ? <img className="w-[60px] h-[50px] md:w-12 rounded-full  md:mr-3" src='{user?.photoURL}' alt="" /> 
+              user.photoURL ? <img className="w-[60px] h-[50px] md:w-12 rounded-full  md:mr-3" src={user?.photoURL} alt="" /> 
                
               
               :
@@ -110,9 +125,9 @@ const Navbar = () => {
              } 
              
              <div className="md:flex justify-center items-center ">
-             <div className="text-lg font-bold font-Cormorant"></div>
+             <div className="text-lg font-bold font-Cormorant">{user.displayName}</div>
               <div>
-              <button className="btn font-Cormorant font-bold" >Sign Out
+              <button onClick={handleSignOut} className="btn bg-[#D5E4DF] border-[#7cf5cd] border-2 hover:bg-[#7cf5cd] font-Cormorant font-bold" >Sign Out
              </button>
               </div>
              </div>
@@ -120,19 +135,19 @@ const Navbar = () => {
           ) : (
             <div>
               <NavLink
-                className="text-2xl font-Cormorant rounded-xl p-3"
+                className="text-2xl font-Cormorant font-medium font-Cormorant rounded-xl p-3"
                 to="/login"
                 style={({ isActive }) => {
                   return {
                     fontWeight: isActive ? "bold" : "",
-                    backgroundColor: isActive ? "pink" : "",
+                    backgroundColor: isActive ? "#7cf5cd" : "",
                   };
                 }}
               >
                 Login
               </NavLink>
             </div>
-          )} */}
+          )}
         </div>
       </div>
       <ToastContainer />
