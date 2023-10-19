@@ -4,7 +4,9 @@ import Navbar from './Navbar';
 
 const Root = () => {
     return (
-        <div className='bg-[#D5E4DF]'>
+        <div 
+        // className='bg-[#D5E4DF]'
+        >
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>
