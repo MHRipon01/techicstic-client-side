@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* 
+#check {
+    background-color: rgb(230, 217, 217);
+}
+
+.banner{
+    background-color: #7b1bf9;
+    color: brown;
+} */
+
+/* #light{
+    background-color: rebeccapurple;
+}
+
+#dark{
+    background-color: brown;
+} */
+/* 
+
+.dark-theme {
+    --main-heading: #5f99be;
+    --para-clr: #fff;
+    --btn-bg-color: #5f99be;
+    --btn-text-clr:#fff;
+    --bg-clr: #111b20;
+
+} */
+
+
+
+
+/* 
+
+.light-theme {
+    --main-heading: #5f99be;
+    --para-clr: #333;
+--btn-bg-color: #111b20;
+--btn-text-clr:#fff;
+--bg-clr: #fff;
+
+
+}  */

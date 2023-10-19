@@ -1,51 +1,50 @@
-import { Slide } from 'react-slideshow-image';
-
-import 'react-slideshow-image/dist/styles.css';
-const Slider = ({product}) => {
-    // console.log(product[7].photo);
-    // const image1 = product[7].photo
-  const images = [
-    "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-];
-  
-
-//   console.log(images[0]);
-
-  const slideStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundSize: 'cover',
-    height: '350px',
-  };
-
-  const spanStyle = {
-    padding: '20px',
-    fontSize: '20px',
-    background: '#efefef',
-    textAlign: 'center',
-  };
-
+const Slider = ({ product }) => {
+  console.log(product[0].photo);
   return (
-    <Slide>
-      <div className="each-slide-effect h-full" style={slideStyle}>
-        <div  className="bg-[url('https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')]">
-          <span style={spanStyle}>Slide 1</span>
+    <div>
+      <div>
+        <div className="carousel  w-[90vw] overflow-x-hidden">
+          <div id="item1" className="carousel-item grid md:flex  w-full  h-full ">
+            <img src={`${product[0].photo}`} className="w-[90vw] border-2" />
+            <h3 className="text-4xl font-bold text-sky-300 w-full flex  justify-center text-center border-2 items-center border-purple-600">
+              Get Your product now!
+            </h3>
+          </div>
+          <div id="item2" className="carousel-item grid md:flex w-full  h-full ">
+            <img src={`${product[1].photo}`} className="w-[90vw] border-2" />
+            <h3 className="text-4xl font-bold text-sky-300 w-full flex  justify-center text-center border-2 items-center border-purple-600">
+              Get Your product now!
+            </h3>
+          </div>
+          <div id="item3" className="carousel-item grid md:flex w-full  h-full ">
+            <img src={`${product[2].photo}`} className="w-[90vw] border-2" />
+            <h3 className="text-4xl font-bold text-sky-300 w-full flex  justify-center text-center border-2 items-center border-purple-600">
+              Get Your product now!
+            </h3>
+          </div>
+          <div id="item4" className="carousel-item grid md:flex w-full  flex justify-center h-full ">
+            <img src={`${product[2].photo}`} className="w-[90vw] border-2" />
+            <h3 className="text-4xl font-bold text-sky-300 w-full flex  justify-center text-center border-2 items-center border-purple-600">
+              Get Your product now!
+            </h3>
+          </div>
+        </div>
+        <div className="flex justify-center w-full py-2 gap-2">
+          <a href="#item1" className="btn btn-xs">
+            1
+          </a>
+          <a href="#item2" className="btn btn-xs">
+            2
+          </a>
+          <a href="#item3" className="btn btn-xs">
+            3
+          </a>
+          <a href="#item4" className="btn btn-xs">
+            4
+          </a>
         </div>
       </div>
-      <div className="each-slide-effect" style={slideStyle}>
-        <div style={{ backgroundImage: `url(${images[1]})` }}>
-          <span style={spanStyle}>Slide 2</span>
-        </div>
-      </div>
-      <div className="each-slide-effect" style={slideStyle}>
-        <div style={{ backgroundImage: `url(${images[2]})` }}>
-          <span style={spanStyle}>Slide 3</span>
-        </div>
-      </div>
-    </Slide>
+    </div>
   );
 };
 

@@ -9,6 +9,8 @@ import AddProduct from '../Pages/AddProduct';
 import MyCart from '../Pages/MyCart';
 import BrandDetails from '../Pages/BrandDetails';
 import PrivateRoute from './PrivateRoute';
+import ProductDetails from '../Pages/ProductDetails';
+import UpdatePage from '../Pages/UpdatePage';
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,16 @@ const router = createBrowserRouter([
                 element: <BrandDetails></BrandDetails>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.brand}`)
                
+            },
+            {
+                path: '/productDetails/:id',
+                element: <ProductDetails></ProductDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
+            },
+            {
+                path: '/update/:id',
+                element: <UpdatePage></UpdatePage>,
+                loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
             },
             {
                 path: '/cart',

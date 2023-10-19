@@ -8,6 +8,9 @@ import RecentSoldItems from "../components/RecentSoldItems";
 import NewArrivals from "../components/NewArrivals";
 
 const Home = () => {
+
+
+
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const products = useLoaderData();
@@ -33,9 +36,17 @@ const Home = () => {
 
   // const categoryName = products.map(item => item.category)
   // console.log(categoryName);
+// const [theme , setTheme] =useState("light")
 
-  return (
-    <div>
+// const toggleTheme = () =>{
+//   setTheme((current) => (current === "light" ? "dark" : "light"))
+// }
+
+
+
+return (
+    <div >
+      <button >Change Theme </button>
       <Banner></Banner>
       Home check
       {products.length}

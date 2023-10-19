@@ -10,7 +10,7 @@ const RecentSoldItems = () => {
           </h2>
         </div>
         <div>
-          <button className="bg-sky-300 text-white text-xl p-4 rounded-lg">
+          <button  className="bg-sky-300 text-white text-xl p-4 rounded-lg">
             View More
           </button>
         </div>
