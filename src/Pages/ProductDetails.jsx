@@ -8,51 +8,42 @@ import { toast } from "react-toastify";
 const ProductDetails = () => {
   const productDetails = useLoaderData();
   console.log(productDetails);
-  const {name, brand,price,description,rating,photo,category} = productDetails;
-  const auth = useContext(AuthContext)
-  
+  const { name, brand, price, description, rating, photo, category } =
+    productDetails;
+  const auth = useContext(AuthContext);
 
   const handleAddToCart = () => {
-  //  console.log(productDetails)
-  //  console.log(auth?.user?.email);
+    //  console.log(productDetails)
+    //  console.log(auth?.user?.email);
 
- 
+    const email = auth?.user?.email;
+    const cartedProduct = {
+      name,
+      brand,
+      price,
+      description,
+      email,
+      rating,
+      photo,
+      category,
+    };
 
+    console.log(cartedProduct);
 
-
-   const email = auth?.user?.email
-   const cartedProduct = {
-    name,
-    brand,
-    price,
-    description,
-    email,
-    rating,
-    photo,
-    category,
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartedProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast("Product added to the cart");
+        }
+      });
   };
-
-  console.log(cartedProduct);
-
- fetch('http://localhost:5000/cart' , {
-    method: 'POST' ,
-    headers: {
-      'content-type':'application/json'
-    },
-    body:JSON.stringify(cartedProduct)
-  })
-  .then(res => res.json())
-  .then(data => {
-    if(data.insertedId){
-      toast('Product added to the cart')
-    }
-  })
-
-
-  }
-
-
-
 
   return (
     <div>
@@ -89,8 +80,11 @@ const ProductDetails = () => {
               <p className="text-xl font-semibold  ">
                 Price: {productDetails.price}
               </p>
-              <button onClick={handleAddToCart} className="p-3 m-4 bg-[#e8fbf4] border hover:border-purple-500 rounded-lg text-xl font-bold hover:bg-sky-300">
-                Add To Cart 
+              <button
+                onClick={handleAddToCart}
+                className="p-3 m-4 bg-[#e8fbf4] border hover:border-purple-500 rounded-lg text-xl font-bold hover:bg-sky-300"
+              >
+                Add To Cart
               </button>
             </div>
           </div>

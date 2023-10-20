@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const UpdatePage = () => {
   const product = useLoaderData();
 
-  const {_id, name, brand, category, photo, price, rating } = product;
+  const { _id, name, brand, category, photo, price, rating } = product;
 
   const handleUpdateCoffee = (event) => {
     event.preventDefault();
@@ -14,8 +14,8 @@ const UpdatePage = () => {
     const name = form.name.value;
     const price = form.price.value;
     const photo = form.photo.value;
-    const rating = form.rating.value; 
-const category = form.category.value
+    const rating = form.rating.value;
+    const category = form.category.value;
     // const details = form.details.value;
     const brand = form.brand.value;
 

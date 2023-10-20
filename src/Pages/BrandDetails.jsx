@@ -2,22 +2,21 @@ import { useEffect } from "react";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Slider from "../components/Slider";
 // import BrandDetailsCard from "../components/BrandDetailsCard";
-import {  AiTwotoneStar } from "react-icons/ai";
+import { AiTwotoneStar } from "react-icons/ai";
 import ProductDetails from "./ProductDetails";
 const BrandDetails = ({ brand }) => {
   const product = useLoaderData();
   // console.log(product[1]._id);
 
-
   //  const { _id, name,  details, category,brand, photo } = product;
 
   // console.log(category ,brand);
 
-  // http://localhost:5000/product/Apple
+  // http://localhost:5173/product/Apple
   // useEffect(() => {
   //     const fetchData = async () => {
   //       try {
-  //         const response = await fetch(`http://localhost:5000/product/${product.category}`);
+  //         const response = await fetch(`http://localhost:5173/product/${product.category}`);
   //         const data = await response.json();
   //         console.log(data);
   //       } catch (error) {
@@ -28,7 +27,7 @@ const BrandDetails = ({ brand }) => {
   //     fetchData();
   //   }, [product.brand]);
 
-  // fetch(`http://localhost:5000/product/${brand}`,{
+  // fetch(`http://localhost:5173/product/${brand}`,{
   //   method: 'GET',
   //   headers: {
   //     'content-type': 'application/json'
@@ -52,7 +51,6 @@ const BrandDetails = ({ brand }) => {
 
   return (
     <div className="bg-gray-100 min-h-[95vh] overflow-x-hidden w-[98w]  ">
-     
       <div className="">
         <Slider key={product.id} product={product}></Slider>
       </div>
@@ -93,9 +91,11 @@ const BrandDetails = ({ brand }) => {
                           <h3 className="flex gap-3">
                             {" "}
                             <div className="w-fit text-4xl font-bold text-yellow-400">
-                            <AiTwotoneStar></AiTwotoneStar>
+                              <AiTwotoneStar></AiTwotoneStar>
                             </div>{" "}
-                            <div className="text-3xl font-semibold w-fit">{tech.rating}</div>
+                            <div className="text-3xl font-semibold w-fit">
+                              {tech.rating}
+                            </div>
                           </h3>
                         </div>
                         <div className="">
