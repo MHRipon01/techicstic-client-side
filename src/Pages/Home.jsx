@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import { Link, useLoaderData } from "react-router-dom";
 import BrandDetails from "./BrandDetails";
@@ -6,24 +6,26 @@ import BrandCard from "../components/BrandCard";
 import Footer from "../components/Footer";
 import RecentSoldItems from "../components/RecentSoldItems";
 import NewArrivals from "../components/NewArrivals";
+import { AuthContext } from "../firebase/AuthProvider";
 
 const Home = () => {
 
 
 const [theme,setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light" )
   const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  // const [filteredData, setFilteredData] = useState([]);
   const products = useLoaderData();
-
+const auth = useContext(AuthContext)
+console.log(auth);
   // useEffect(() => {
   //   setData(products);
   // }, [products]);
 
-  const findData = (category) => {
-    // Filter data by category
-    const newFilteredData = data.filter((item) => item.category === category);
-    setFilteredData(newFilteredData);
-  };
+  // const findData = (category) => {
+  //   // Filter data by category
+  //   const newFilteredData = data.filter((item) => item.category === category);
+  //   setFilteredData(newFilteredData);
+  // };
 
   useEffect(() => {
     fetch("data.json")
@@ -74,8 +76,7 @@ return (
 </label>
 
       <Banner></Banner>
-      Home check
-      {products.length}
+      
       <RecentSoldItems></RecentSoldItems>
       <div className="w-[95%] ml-2.5 lg:ml-10  h-full gap-x-3   grid md:grid-cols-2 lg:grid-cols-3">
         {data.map((brand) => (

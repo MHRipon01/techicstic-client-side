@@ -6,7 +6,7 @@ import {  AiTwotoneStar } from "react-icons/ai";
 import ProductDetails from "./ProductDetails";
 const BrandDetails = ({ brand }) => {
   const product = useLoaderData();
-  console.log(product[1]._id);
+  // console.log(product[1]._id);
 
 
   //  const { _id, name,  details, category,brand, photo } = product;
@@ -43,7 +43,7 @@ const BrandDetails = ({ brand }) => {
     return (
       <div>
         {/* <Slider></Slider> */}
-        <h2 className="w-full flex justify-center items-center text-4xl font-semibold text-purple-400 min-h-[100vh] border-2 border-red-600  bg-gray-100">
+        <h2 className="w-full flex justify-center items-center text-4xl font-semibold text-purple-400 min-h-[100vh]  bg-gray-100">
           Sorry! There is no data for this brand.{" "}
         </h2>{" "}
       </div>
@@ -51,8 +51,8 @@ const BrandDetails = ({ brand }) => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-[95vh] overflow-x-hidden w-[98w]  border-2 border-red-700">
-      details
+    <div className="bg-gray-100 min-h-[95vh] overflow-x-hidden w-[98w]  ">
+     
       <div className="">
         <Slider key={product.id} product={product}></Slider>
       </div>
@@ -60,22 +60,22 @@ const BrandDetails = ({ brand }) => {
         {product.map((tech) => (
           // eslint-disable-next-line react/jsx-key
           <div className="flex  flex-col  h-full  grow ">
-            <div className=" m-4   border-2 border-red-600 ">
-              <h2 className=" border-2  border-blue-500">
-                <div className="   border-2 border-purple-600">
+            <div className=" m-4   ">
+              <h2 className=" ">
+                <div className="   ">
                   <div className="relative   rounded-xl bg-[#D5E4DF]  m-0  shrink-0 overflow-hidden  md:flex   bg-clip-border text-gray-700">
                     <div className="h-full flex max-w-[98%]   justify-center items-center">
                       <img
                         src={tech.photo}
                         alt="image"
-                        className="h-full w-full  object-cover"
+                        className="h-full w-full lg:w-[40vw] lg:max-h-[30vh] lg:h-60 "
                       />
                     </div>
                     <div className="w-full">
                       <div className="p-6 w-full">
                         <h4
                           id="card-title"
-                          className="mb-2  border-2 border-blue-800 block  text-3xl font-Cormorant font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+                          className="mb-2  block  text-3xl font-Cormorant font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
                         >
                           {tech.name}
                         </h4>

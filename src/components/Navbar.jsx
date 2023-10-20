@@ -5,8 +5,16 @@ import { ToastContainer } from 'react-toastify';
 import { AuthContext } from '../firebase/AuthProvider';
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut   } = useContext(AuthContext);
   // console.log(user);
+
+  
+  const auth = useContext(AuthContext)
+  console.log(auth);
+
+
+  const email = auth.user?.email
+console.log(email);
 
   const handleSignOut = () => {
     logOut()
@@ -48,7 +56,8 @@ const Navbar = () => {
       </NavLink>
       <NavLink
         className="text-2xl font-Cormorant font-medium rounded-xl p-3"
-        to="/cart"
+        to={`/cart/${email}`}
+
         style={({ isActive }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -130,7 +139,7 @@ const Navbar = () => {
              <div className="md:flex justify-center items-center ">
              <div className="text-lg font-bold font-Cormorant">{user.displayName}</div>
               <div>
-              <button onClick={handleSignOut} className="btn bg-[#D5E4DF] border-[#7cf5cd] border-2 hover:bg-[#7cf5cd] font-Cormorant font-bold" >Sign Out
+              <button onClick={handleSignOut} className="btn lg:mx-4 bg-[#D5E4DF] border-[#7cf5cd] border-2 hover:bg-[#7cf5cd] font-Cormorant font-bold" >Sign Out
              </button>
               </div>
              </div>
@@ -138,7 +147,7 @@ const Navbar = () => {
           ) : (
             <div>
               <NavLink
-                className="text-2xl font-Cormorant font-medium font-Cormorant rounded-xl p-3"
+                className="text-2xl mx-2 font-Cormorant font-medium font-Cormorant rounded-xl p-3"
                 to="/login"
                 style={({ isActive }) => {
                   return {
