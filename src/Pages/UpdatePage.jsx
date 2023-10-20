@@ -33,13 +33,16 @@ const UpdatePage = () => {
 
     //send data to the server
 
-    fetch(`http://localhost:5000/update/${_id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json ",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/update/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json ",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

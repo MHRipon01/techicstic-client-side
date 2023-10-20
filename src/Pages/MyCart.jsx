@@ -43,7 +43,7 @@ const MyCart = ({ params }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cartedProduct/${_id}`, {
+        fetch(`https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/cartedProduct/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

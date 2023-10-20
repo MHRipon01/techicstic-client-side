@@ -29,7 +29,7 @@ const AddProduct = () => {
 
     //data sending to server
     fetch(
-      "http://localhost:5000/product",
+      "https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/product",
       {
         method: "POST",
         headers: {

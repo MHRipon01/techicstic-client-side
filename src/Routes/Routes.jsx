@@ -20,7 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/product"),
+        loader: () =>
+          fetch(
+            "https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/product"
+          ),
       },
       {
         path: "/login",
@@ -42,7 +45,9 @@ const router = createBrowserRouter([
         path: "/details/:brand",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brand}`),
+          fetch(
+            `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/product/${params.brand}`
+          ),
       },
       {
         path: "/productDetails/:id",
@@ -52,7 +57,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productDetails/${params.id}`),
+          fetch(
+            `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/productDetails/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
@@ -63,7 +70,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update/${params.id}`),
+          fetch(
+            `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/update/${params.id}`
+          ),
       },
       {
         path: "/cart/:email",
@@ -74,7 +83,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cartedProduct/${params.email}`),
+          fetch(
+            `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/cartedProduct/${params.email}`
+          ),
       },
     ],
   },

@@ -30,13 +30,16 @@ const ProductDetails = () => {
 
     console.log(cartedProduct);
 
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(cartedProduct),
-    })
+    fetch(
+      "https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
