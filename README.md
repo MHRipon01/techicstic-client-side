@@ -1,5 +1,5 @@
 # techIsTic
-# website link:
+# website link: https://techistic-abd55.web.app/
 
 This project is an e-commerce web application built with React and Express.
 
