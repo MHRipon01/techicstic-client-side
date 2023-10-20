@@ -7,6 +7,16 @@ const MyCart = () => {
   const detailedProduct = useLoaderData();
   console.log(detailedProduct);
 
+// const {_id,name} = detailedProduct;
+// console.log(name);
+const _id = detailedProduct._id;
+console.log(_id);
+  const handleDelete = _id =>{
+console.log(detailedProduct._id);
+  }
+
+
+
   return (
     <div className="lg:flex  justify-center">
         <div className="lg:flex lg:flex-grow lg:justify-between  lg:max-w-[50vw]  ">
@@ -29,7 +39,7 @@ const MyCart = () => {
                     techIstic verified
                   </h2>
                   <h3>{product.price} </h3>
-                  <button className="text-3xl font-semibold text-red-500"><AiFillDelete></AiFillDelete> </button>
+                  <button onClick={() => handleDelete(_id)} className="text-3xl font-semibold text-red-500"><AiFillDelete></AiFillDelete> </button>
                 </div>
               </div>
             </div>
