@@ -43,22 +43,26 @@ const MyCart = ({ params }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/cartedProduct/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://techistic-server-8kovry9lx-md-mehedi-hasan-ripons-projects.vercel.app/cartedProduct/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             // if (data.deletedCount > 0) {
-              Swal.fire(
-                "Deleted!",
-                "Product has been deleted from the cart.",
-                "success"
-              );
-              const remainingProduct = cartProduct.filter((singleProduct) =>singleProduct._id != _id
-              );
-              console.log(remainingProduct);
-              setCartProduct(remainingProduct);
+            Swal.fire(
+              "Deleted!",
+              "Product has been deleted from the cart.",
+              "success"
+            );
+            const remainingProduct = cartProduct.filter(
+              (singleProduct) => singleProduct._id != _id
+            );
+            console.log(remainingProduct);
+            setCartProduct(remainingProduct);
             // }
           });
       }
@@ -73,7 +77,6 @@ const MyCart = ({ params }) => {
             <CartProduct
               key={product._id}
               product={product}
-              
               handleDelete={handleDelete}
             ></CartProduct>
           ))}

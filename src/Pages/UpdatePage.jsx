@@ -34,7 +34,7 @@ const UpdatePage = () => {
     //send data to the server
 
     fetch(
-      `https://techistic-server-eqjctrrb9-md-mehedi-hasan-ripons-projects.vercel.app/update/${_id}`,
+      `https://techistic-server-8kovry9lx-md-mehedi-hasan-ripons-projects.vercel.app/update/${_id}`,
       {
         method: "PUT",
         headers: {

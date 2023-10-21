@@ -3,9 +3,9 @@ const Slider = ({ product }) => {
   return (
     <div>
       <div>
-        <div className="carousel  w-[90vw] ">
+        <div className="carousel  w-[90vw] h-[30vw] ">
           <div id="item1" className="carousel-item grid md:flex  w-full  h-full ">
-            <img src={`${product[0].photo}`} className="w-[90vw]" />
+            <img src={`${product[0].photo}`} className="w-[30vw]" />
             <h3 className="text-4xl font-bold text-sky-300 w-full flex  justify-center text-center   items-center ">
              <div>
              <p className="text-purple-400">30% flat discount</p>
