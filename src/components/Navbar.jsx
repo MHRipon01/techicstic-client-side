@@ -67,18 +67,7 @@ console.log(email);
       >
         My Cart
       </NavLink>
-      {/* <NavLink
-        className="text-2xl font-Cormorant font-medium rounded-xl p-3"
-        to="/login"
-        style={({ isActive }) => {
-          return {
-            fontWeight: isActive ? "bold" : "",
-            backgroundColor: isActive ? "#7cf5cd" : "",
-          };
-        }}
-      >
-       Login 
-      </NavLink> */}
+      
     </>
   );
 

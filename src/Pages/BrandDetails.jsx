@@ -1,42 +1,12 @@
 import { useEffect } from "react";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Slider from "../components/Slider";
-// import BrandDetailsCard from "../components/BrandDetailsCard";
+
 import { AiTwotoneStar } from "react-icons/ai";
 import ProductDetails from "./ProductDetails";
 const BrandDetails = ({ brand }) => {
   const product = useLoaderData();
-  // console.log(product[1]._id);
-
-  //  const { _id, name,  details, category,brand, photo } = product;
-
-  // console.log(category ,brand);
-
-  // http://localhost:5173/product/Apple
-  // useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const response = await fetch(`http://localhost:5173/product/${product.category}`);
-  //         const data = await response.json();
-  //         console.log(data);
-  //       } catch (error) {
-  //         console.error("Error fetching data: ", error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, [product.brand]);
-
-  // fetch(`http://localhost:5173/product/${brand}`,{
-  //   method: 'GET',
-  //   headers: {
-  //     'content-type': 'application/json'
-  //   }
-
-  // }).then(res => res.json())
-  // .then(data => {
-  //   // console.log(data);
-  // })
+ 
 
   if (product.length == 0) {
     return (

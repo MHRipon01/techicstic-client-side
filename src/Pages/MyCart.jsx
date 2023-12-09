@@ -12,20 +12,7 @@ const MyCart = ({ params }) => {
   const email = useContext(AuthContext);
 
   console.log(email);
-  // const [cart, setCart] = useState();
-
-  //   useEffect(() => {
-  //     fetch(`http://localhost:5173/cartedProduct/${params.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //         setCart(data);
-  //       });
-  //   }, []);
-  // console.log(cart);
-
-  // const {_id,name} = detailedProduct;
-  // console.log(name);
+  
   const _id = detailedProduct._id;
   console.log(_id);
 
@@ -80,36 +67,7 @@ const MyCart = ({ params }) => {
               handleDelete={handleDelete}
             ></CartProduct>
           ))}
-
-          {/* {detailedProduct.map((product) => (
-            <div key={product.id}>
-              <div className="mt-5 shadow-xl">
-                <div className="flex ">
-                  <input type="radio" className="w-5 ml-3" name="" id="" />
-                  <div>
-                    <img
-                      className="max-h-36 lg:max-h-[40vh] ml-3 m-3"
-                      src={product.photo}
-                      alt=""
-                    />
-                  </div>
-                  <div className="text-center lg:mt-14 items-center ">
-                    <h3 className="font-medium pt-5">{product.name}</h3>
-                    <h2 className="border w-fit m-2 text-[#757e7b] border-gray-200">
-                      techIstic verified
-                    </h2>
-                    <h3>{product.price} </h3>
-                    <button
-                      onClick={() => handleDelete(product._id)}
-                      className="text-3xl font-semibold text-red-500"
-                    >
-                      <AiFillDelete></AiFillDelete>{" "}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))} //akhne */}
+ 
         </div>
         <div>
           <div className="bg-gray-100 flex justify-between py-10 rounded-lg flex-grow  items-center lg:h-[50vh] lg:ml-6 lg:p-6 w-full">

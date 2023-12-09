@@ -1,7 +1,8 @@
-# techIsTic
+# Techistic - Online Shopping Platform
 # website link: https://techistic-abd55.web.app/
 
-This project is an e-commerce web application built with React and Express.
+Techistic is an online shopping platform built on Node.js, Express, and MongoDB that provides users with a seamless shopping experience. It includes product management, cart functionality, and user-specific product views.
+
 
 ## Features
 
@@ -17,3 +18,22 @@ This project is an e-commerce web application built with React and Express.
 
 7. **Dark Mode**: Users can toggle between light and dark themes on the home page.
 8. **Error Handling**: The application includes an error page that is displayed when an error occurs during routing.
+
+
+
+
+
+
+## Getting Started
+
+1. Clone this repository.
+2. Set up environment variables by creating a `.env` file and defining `DB_USER`, `DB_PASS`, and other required variables.
+3. Install dependencies using `npm install`.
+4. Start the server with `npm start`.
+5. Access the application via `http://localhost:5000`.
+
+## Contributors
+
+- [MH Ripon](https://github.com/MHRipon01)
+
+
